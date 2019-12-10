@@ -1,4 +1,4 @@
 <?php 
-namespace GLibsky\Exceptions;
+namespace JsonMapper\Exceptions;
 
 class MappingFatalException  extends \Exception { }

@@ -1,5 +1,4 @@
 <?php 
-namespace GLibsky\Exceptions;
-
+namespace JsonMapper\Exceptions;
 
 class MissmatchFieldsException extends \Exception { }
