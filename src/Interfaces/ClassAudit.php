@@ -1,5 +1,5 @@
 <?php 
-namespace JsonMapper;
+namespace JsonMapper\Interfaces;
 
 use JsonMapper\Specification\ClassSpecification;
 
