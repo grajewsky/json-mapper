@@ -13,10 +13,10 @@ class JsonMapper implements JsonMapperInterface {
      */
     private $container = null;
 
-    public function __construct() {
+    public function __construct() 
+    {
         $this->container = json_mapper_container();
         $this->container->set('config', $this->selectConfig());
-
     }
     public function map(string $json, $class)
     {
@@ -27,7 +27,7 @@ class JsonMapper implements JsonMapperInterface {
         
         if (function_exists("json_mapper_config_user")) {
             $reflectionFunc  = new ReflectionFunction("json_mapper_config_user");
-            if ($reflectionFunc->hasReturnType()->getName() === 'JsonMapper\Interfaces\JsonMapper') {
+            if ($reflectionFunc->hasReturnType()->getName() === 'JsonMapper\Interfaces\Config') {
                 return json_mapper_config_user();
             }
         }
