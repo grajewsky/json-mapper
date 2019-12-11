@@ -6,8 +6,8 @@ convertErrorsToExceptions="true"
 convertNoticesToExceptions="true"
 convertWarningsToExceptions="true">
     <testsuites>
-        <testsuite name="unit">
-        <directory>tests</directory>
+        <testsuite name="unit" suffix="Test.php">
+        <directory>tests/</directory>
         </testsuite>
     </testsuites>
     <filter>

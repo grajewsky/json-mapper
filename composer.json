@@ -8,8 +8,14 @@
         "psr/container": "^1.0"
     },
     "autoload": {
+        "files": ["functions.php"],
         "psr-4": {
             "JsonMapper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
         }
     },
     "scripts": {
