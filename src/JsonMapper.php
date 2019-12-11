@@ -28,7 +28,7 @@ class JsonMapper implements JsonMapperInterface {
         if (function_exists("json_mapper_config_user")) {
             $reflectionFunc  = new ReflectionFunction("json_mapper_config_user");
             if ($reflectionFunc->hasReturnType()->getName() === 'JsonMapper\Interfaces\Config') {
-                return json_mapper_config_user();
+                return call_user_func("json_mapper_config_user");
             }
         }
 
