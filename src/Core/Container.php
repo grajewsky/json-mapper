@@ -7,6 +7,11 @@ use JsonMapper\Exceptions\ContainerElementNotFoundException;
 
 final class Container implements ContainerInterface {
     /** 
+     * @var self
+     */
+    private static $instance;
+
+    /** 
      * @var array
      */
     private $instances = [];
@@ -55,4 +60,14 @@ final class Container implements ContainerInterface {
     public function has($id) {
         return array_key_exists($id, $this->instances);
     }
+
+
+    public static function instance(): self {
+        if (self::$instance == null) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
 }
+
