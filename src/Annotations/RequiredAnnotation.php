@@ -11,9 +11,10 @@ final class RequiredAnnotation implements ValidationAnnotation
 
     private $errors = [];
 
-    public function __construct() {
-        
-    }
+    private $fieldname;
+
+    private $value;
+    
     /** 
      * @param mixed $value
      * 
@@ -45,4 +46,10 @@ final class RequiredAnnotation implements ValidationAnnotation
     {
         return count($this->errors()) > 0;
     }
+    public function setField(string $name, $value): void {
+        $this->fieldName = $name;
+        $this->value = $value;
+    }
+    public function getFieldName(): string;
+    public function getFieldValue();
 }

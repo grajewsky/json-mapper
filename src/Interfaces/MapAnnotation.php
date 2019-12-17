@@ -1,10 +1,13 @@
 <?php 
 namespace JsonMapper\Interfaces;
 
+use JsonMapper\Interfaces\FieldInterface;
+
+
 /** 
  * @Annotation
  */
-interface MapAnnotation {
+interface MapAnnotation extends FieldInterface {
     
     /** 
      * @param mixed $value

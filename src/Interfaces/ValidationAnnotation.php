@@ -1,25 +1,22 @@
 <?php 
 namespace JsonMapper\Interfaces;
 
+use JsonMapper\Interfaces\FieldInterface;
+
 /** 
  * @Annotation
  */
-interface ValidationAnnotation {
+interface ValidationAnnotation extends FieldInterface {
     
     /** 
      * @param mixed $value
      * 
      * @return bool
      */
-    public function validate($value): bool;
+    public function validate(): bool;
     /** 
      * 
      * @return string[]
      */
     public function errors(): array;
-    /** 
-     * 
-     * @return bool
-     */
-    public function isValid(): bool;
 }
