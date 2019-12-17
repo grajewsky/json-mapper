@@ -11,7 +11,9 @@ final class RequiredAnnotation implements ValidationAnnotation
 
     private $errors = [];
 
-
+    public function __construct() {
+        
+    }
     /** 
      * @param mixed $value
      * 
@@ -19,14 +21,17 @@ final class RequiredAnnotation implements ValidationAnnotation
      */
     public function validate($value): bool 
     {
+        $this->errors = [];
         if (is_null($value) || empty($value)) {
+            $this->errors[] = "Field is empty, is required";
             return false;
         }
         return true;
     }
     /** 
      * 
-     * @return string[]
+     * @r
+     * eturn string[]
      */
     public function errors(): array 
     {
