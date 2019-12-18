@@ -11,20 +11,21 @@ final class RequiredAnnotation implements ValidationAnnotation
 
     private $errors = [];
 
-    private $fieldname;
+    private $fieldName;
 
     private $value;
-    
+
     /** 
      * @param mixed $value
      * 
      * @return bool
      */
-    public function validate($value): bool 
+    public function validate(): bool 
     {
+        $value = $this->getFieldValue();
         $this->errors = [];
         if (is_null($value) || empty($value)) {
-            $this->errors[] = "Field is empty, is required";
+            $this->errors[] = sprintf("Field '%s' is empty, is required", $this->fieldName);
             return false;
         }
         return true;
@@ -50,6 +51,10 @@ final class RequiredAnnotation implements ValidationAnnotation
         $this->fieldName = $name;
         $this->value = $value;
     }
-    public function getFieldName(): string;
-    public function getFieldValue();
+    public function getFieldName(): string {
+        return $this->fieldName;
+    }
+    public function getFieldValue() {
+        return $this->value;
+    }
 }
