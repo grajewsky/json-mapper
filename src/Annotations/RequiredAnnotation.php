@@ -8,7 +8,6 @@ use JsonMapper\Interfaces\ValidationAnnotation;
  */
 final class RequiredAnnotation implements ValidationAnnotation
 {
-
     private $errors = [];
 
     private $fieldName;
@@ -30,6 +29,7 @@ final class RequiredAnnotation implements ValidationAnnotation
         }
         return true;
     }
+
     /** 
      * 
      * @r
@@ -39,6 +39,7 @@ final class RequiredAnnotation implements ValidationAnnotation
     {
         return $this->errors;
     }
+
     /** 
      * 
      * @return bool
@@ -47,14 +48,17 @@ final class RequiredAnnotation implements ValidationAnnotation
     {
         return count($this->errors()) > 0;
     }
-    public function setField(string $name, $value): void {
+    public function setField(string $name, $value): void 
+    {
         $this->fieldName = $name;
         $this->value = $value;
     }
-    public function getFieldName(): string {
+    public function getFieldName(): string 
+    {
         return $this->fieldName;
     }
-    public function getFieldValue() {
+    public function getFieldValue() 
+    {
         return $this->value;
     }
 }
