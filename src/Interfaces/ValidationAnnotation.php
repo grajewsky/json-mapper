@@ -6,8 +6,8 @@ use JsonMapper\Interfaces\FieldInterface;
 /** 
  * @Annotation
  */
-interface ValidationAnnotation extends FieldInterface {
-    
+interface ValidationAnnotation extends FieldInterface 
+{    
     /** 
      * @param mixed $value
      * 

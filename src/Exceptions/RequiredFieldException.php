@@ -1,4 +1,7 @@
 <?php 
 namespace JsonMapper\Exceptions;
 
-class RequiredFieldException extends \Exception { }
+class RequiredFieldException extends \Exception 
+{
+    
+}

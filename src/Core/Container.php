@@ -5,7 +5,8 @@ use Psr\Container\ContainerInterface;
 use JsonMapper\Exceptions\ContainerNotFoundException;
 use JsonMapper\Exceptions\ContainerElementNotFoundException;
 
-final class Container implements ContainerInterface {
+final class Container implements ContainerInterface 
+{
     /** 
      * @var self
      */
@@ -22,7 +23,8 @@ final class Container implements ContainerInterface {
      * 
      * @return void
      */
-    public function set(string $abstract, $concrete = null): void {
+    public function set(string $abstract, $concrete = null): void 
+    {
         if ($concrete == null) {
             $concrete = $abstract;
         }
@@ -38,7 +40,8 @@ final class Container implements ContainerInterface {
      *
      * @return mixed Entry.
      */
-    public function get($id) {
+    public function get($id) 
+    {
         if ($this->has($id)) {
             return $this->instances[$id];
         }
@@ -57,12 +60,14 @@ final class Container implements ContainerInterface {
      *
      * @return bool
      */
-    public function has($id) {
+    public function has($id) 
+    {
         return array_key_exists($id, $this->instances);
     }
 
 
-    public static function instance(): self {
+    public static function instance(): self 
+    {
         if (self::$instance == null) {
             self::$instance = new self();
         }

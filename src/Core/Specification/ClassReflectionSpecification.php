@@ -4,6 +4,7 @@ namespace JsonMapper\Core\Specification;
 use ArrayIterator;
 use JsonMapper\Specification\ClassSpecification;
 use JsonMapper\Specification\PropertySpecification;
+
 /** 
  * @implements ClassSpecification
  */

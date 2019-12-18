@@ -6,7 +6,8 @@ use JsonMapper\Core\Container;
 use JsonMapper\Interfaces\Config;
 use JsonMapper\Interfaces\JsonMapper as JsonMapperInterface;
 
-class JsonMapper implements JsonMapperInterface {
+class JsonMapper implements JsonMapperInterface 
+{
 
     /** 
      * @var Container
@@ -23,8 +24,8 @@ class JsonMapper implements JsonMapperInterface {
         
     }
 
-    private function selectConfig(): Config {
-        
+    private function selectConfig(): Config 
+    {
         if (function_exists("json_mapper_config_user")) {
             $reflectionFunc  = new ReflectionFunction("json_mapper_config_user");
             if ($reflectionFunc->hasReturnType()->getName() === 'JsonMapper\Interfaces\Config') {

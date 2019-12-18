@@ -1,4 +1,7 @@
 <?php 
 namespace JsonMapper\Exceptions;
 
-class MissmatchFieldsException extends \Exception { }
+class MissmatchFieldsException extends \Exception 
+{
+    
+}

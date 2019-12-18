@@ -1,7 +1,8 @@
 <?php
 namespace JsonMapper\Interfaces;
 
-interface JsonMapper {
+interface JsonMapper 
+{
     /** 
      * @template T
      * @param string $json
