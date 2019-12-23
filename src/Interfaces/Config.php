@@ -5,9 +5,9 @@ namespace JsonMapper\Interfaces;
 interface Config 
 {
     /** 
-     * JsonMapper Class instance of \JsonMapper\JsonMapper
+     * JsonMapper
      * 
-     * @return string
+     * @return \JsonMapper\Interfaces\JsonMapper
      */
-    public function getJsonMapperClass(): string;
+    public function getJsonMapperAdapterClass(): \JsonMapper\Interfaces\JsonMapper;
 }
