@@ -1,4 +1,5 @@
 <?php 
+namespace JsonMapper\Interfaces;
 
 
 interface Pluginable 

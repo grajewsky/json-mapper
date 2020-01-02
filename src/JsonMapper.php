@@ -1,10 +1,10 @@
 <?php 
 namespace JsonMapper;
 
-use JsonMapper\Core\Container;
 use JsonMapper\Core\Plugins;
+use JsonMapper\Core\Container;
+use JsonMapper\Interfaces\Pluginable;
 use JsonMapper\Interfaces\JsonMapper as JsonMapperInterface;
-use Pluginable;
 
 class JsonMapper implements JsonMapperInterface, Pluginable
 {
