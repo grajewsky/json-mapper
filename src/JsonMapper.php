@@ -1,12 +1,11 @@
 <?php 
 namespace JsonMapper;
 
-use ReflectionFunction;
 use JsonMapper\Core\Container;
-use JsonMapper\Interfaces\Config;
 use JsonMapper\Interfaces\JsonMapper as JsonMapperInterface;
+use Pluginable;
 
-class JsonMapper implements JsonMapperInterface 
+class JsonMapper implements JsonMapperInterface, Pluginable
 {
 
     /** 
@@ -17,22 +16,25 @@ class JsonMapper implements JsonMapperInterface
     public function __construct() 
     {
         $this->container = json_mapper_container();
-        $this->container->set('config', $this->selectConfig());
+        $this->container->set('plugins', );
     }
     public function map(string $json, $class)
     {
-        
+
+    }
+    /** 
+     * @param mixed $plugin
+     */
+    public function addPlugin($plugin): bool 
+    {
+        return false;
     }
 
-    private function selectConfig(): Config 
+    /** 
+     * @return array
+     */
+    public function plugins()
     {
-        if (function_exists("json_mapper_config_user")) {
-            $reflectionFunc  = new ReflectionFunction("json_mapper_config_user");
-            if ($reflectionFunc->hasReturnType()->getName() === 'JsonMapper\Interfaces\Config') {
-                return call_user_func("json_mapper_config_user");
-            }
-        }
-
-        return json_mapper_config();
+        return [];
     }
 }
